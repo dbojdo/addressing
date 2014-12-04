@@ -1,6 +1,6 @@
 <?php
 /**
- * File: IsoCodeNumericAwareCountry.php
+ * File: IsoCodeNumericAwareCountryInterface.php
  * Created at: 2014-11-20 21:17
  */
  
@@ -10,7 +10,8 @@ namespace Webit\Addressing\Model;
  * Interface IsoCodeNumericAwareCountry
  * @author Daniel Bojdo <daniel.bojdo@web-it.eu>
  */
-interface IsoCodeNumericAwareCountry {
+interface IsoCodeNumericAwareCountryInterface extends CountryInterface
+{
 
     /**
      * @return string

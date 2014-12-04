@@ -1,16 +1,17 @@
 <?php
 /**
- * File: IsoCodeAlpha3AwareCountry.php
+ * File: IsoCodeAlpha3AwareCountryInterface.php
  * Created at: 2014-11-20 21:16
  */
  
 namespace Webit\Addressing\Model;
 
 /**
- * Interface IsoCodeAlpha3AwareCountry
+ * Interface IsoCodeAlpha3AwareCountryInterface
  * @author Daniel Bojdo <daniel.bojdo@web-it.eu>
  */
-interface IsoCodeAlpha3AwareCountry extends CountryInterface {
+interface IsoCodeAlpha3AwareCountryInterface extends CountryInterface
+{
 
     /**
      * @return string

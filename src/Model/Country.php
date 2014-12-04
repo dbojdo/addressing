@@ -10,7 +10,7 @@ namespace Webit\Addressing\Model;
  * Class Country
  * @author Daniel Bojdo <daniel.bojdo@web-it.eu>
  */
-class Country implements CountryInterface {
+class Country implements IsoCodeNumericAwareCountryInterface, IsoCodeAlpha3AwareCountryInterface {
 
     /**
      * @var string
@@ -23,13 +23,25 @@ class Country implements CountryInterface {
     protected $isoCode;
 
     /**
+     * @var string
+     */
+    protected $isoCodeAlpha3;
+
+    /**
+     * @var string
+     */
+    protected $isoCodeNumeric;
+
+    /**
      * @param string $name
      * @param string $isoCode
      */
-    public function __construct($name = null, $isoCode = null)
+    public function __construct($name = null, $isoCode = null, $isoCodeAlpha3 = null, $isoCodeNumeric = null)
     {
         $this->setName($name);
         $this->setIsoCode($isoCode);
+        $this->setIsoCodeAlpha3($isoCodeAlpha3);
+        $this->setIsoCodeNumeric($isoCodeNumeric);
     }
 
     /**
@@ -62,5 +74,37 @@ class Country implements CountryInterface {
     public function setIsoCode($isoCode)
     {
         $this->isoCode = $isoCode;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsoCodeAlpha3()
+    {
+        return $this->isoCodeAlpha3;
+    }
+
+    /**
+     * @param string $isoCodeAlpha3
+     */
+    public function setIsoCodeAlpha3($isoCodeAlpha3)
+    {
+        $this->isoCodeAlpha3 = $isoCodeAlpha3;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsoCodeNumeric()
+    {
+        return $this->isoCodeNumeric;
+    }
+
+    /**
+     * @param string $isoCodeNumeric
+     */
+    public function setIsoCodeNumeric($isoCodeNumeric)
+    {
+        $this->isoCodeNumeric = $isoCodeNumeric;
     }
 }

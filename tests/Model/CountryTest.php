@@ -19,7 +19,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase {
      */
     public function shouldBeAwareOfName()
     {
-        $name = 'England';
+        $name = 'United Kingdom';
 
         $country = new Country();
         $country->setName($name);
@@ -32,7 +32,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase {
      */
     public function shouldBeAwareOfIsoCode()
     {
-        $isoCode = 'EN';
+        $isoCode = 'GB';
 
         $country = new Country();
         $country->setIsoCode($isoCode);
@@ -43,14 +43,44 @@ class CountryTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
+    public function shouldBeAwareOfIsoCodeAlpha3()
+    {
+        $isoCodeAlpha3 = 'GBR';
+
+        $country = new Country();
+        $country->setIsoCodeAlpha3($isoCodeAlpha3);
+
+        $this->assertEquals($isoCodeAlpha3, $country->getIsoCodeAlpha3());
+    }
+
+    /**
+     * @test
+     */
+    public function shouldBeAwareOfIsoCodeNumeric()
+    {
+        $isoCodeNumeric = '826';
+
+        $country = new Country();
+        $country->setIsoCodeNumeric($isoCodeNumeric);
+
+        $this->assertEquals($isoCodeNumeric, $country->getIsoCodeNumeric());
+    }
+
+    /**
+     * @test
+     */
     public function shouldBeDefinableViaConstructor()
     {
-        $name = 'England';
-        $isoCode = 'EN';
+        $name = 'United Kingdom';
+        $isoCode = 'GB';
+        $isoAlpha3 = 'GBR';
+        $isoNumeric = '826';
 
-        $country = new Country($name, $isoCode);
+        $country = new Country($name, $isoCode, $isoAlpha3, $isoNumeric);
             $this->assertEquals($name, $country->getName());
             $this->assertEquals($isoCode, $country->getIsoCode());
+            $this->assertEquals($isoAlpha3, $country->getIsoCodeAlpha3());
+            $this->assertEquals($isoNumeric, $country->getIsoCodeNumeric());
     }
 }
  

@@ -58,6 +58,14 @@ class CountryRepositoryInMemory implements CountryRepositoryInterface
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getCountries()
+    {
+        return $this->countries;
+    }
+
+    /**
      * @param string $code
      * @return null|CountryInterface
      */

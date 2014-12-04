@@ -32,13 +32,23 @@ class CountryRepositoryInMemoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function getCountries()
+    private function getCountries()
     {
         return array(
             array('United Kingdom', 'GB', 'GBR', '826'),
             array('Poland', 'PL', null, '616'),
             array('Saint Pierre and Miquelon', 'PM', null, null)
         );
+    }
+
+    /**
+     * @test
+     */
+    public function shouldReturnCountries()
+    {
+        $countries = $this->repository->getCountries();
+        $this->assertInstanceOf('Doctrine\Common\Collections\ArrayCollection', $countries);
+        $this->assertEquals(3, $countries->count());
     }
 
     /**

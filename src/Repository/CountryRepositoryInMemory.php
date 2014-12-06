@@ -67,7 +67,7 @@ class CountryRepositoryInMemory implements CountryRepositoryInterface
 
     /**
      * @param string $code
-     * @return null|CountryInterface
+     * @return CountryInterface
      */
     private function findCountryByAlpha3Code($code)
     {

@@ -8,6 +8,7 @@ namespace Webit\Addressing\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Webit\Addressing\Model\CountryCodeTypes;
+use Webit\Addressing\Model\CountryInterface;
 
 interface CountryRepositoryInterface
 {

@@ -21,5 +21,5 @@ interface CountryAwareAddressInterface extends AddressInterface
     /**
      * @param CountryInterface $country
      */
-    public function setCountry(CountryInterface $country);
+    public function setCountry(CountryInterface $country = null);
 }

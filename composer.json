@@ -20,5 +20,6 @@
         "psr-4": {
             "Webit\\Addressing\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

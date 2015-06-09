@@ -107,4 +107,12 @@ class Country implements IsoCodeNumericAwareCountryInterface, IsoCodeAlpha3Aware
     {
         $this->isoCodeNumeric = $isoCodeNumeric;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
 }

@@ -31,4 +31,9 @@ interface CountryInterface {
      * @param string $isoCode
      */
     public function setIsoCode($isoCode);
+
+    /**
+     * @return string
+     */
+    public function __toString();
 }
